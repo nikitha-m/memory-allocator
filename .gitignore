@@ -1,0 +1,18 @@
+# Build artifacts
+*.o
+*.out
+*.exe
+malloc_test
+
+# Editor
+.DS_Store
+.vscode/
+.idea/
+
+# Editor config
+.opencode/
+opencode.json
+
+# Temp
+/tmp
+*.log
