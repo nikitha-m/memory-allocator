@@ -1,15 +1,11 @@
 # HLD: Custom malloc Allocator
 
 ## 1. System Overview
-   I am trying to build my custom implementation of HLD Template for your malloc
-Write a document docs/designs/hld-malloc.md with these sections:
-# HLD: Custom malloc Allocator
-
-## 1. System Overview
 I am building my own ```malloc```, ```free```, ```calloc``` and ```realloc```. ```malloc``` and ```calloc``` are used to allocate some bytes of memory. ```free``` is used to deallocate the memory that was previously allocated by ```malloc``` or ```calloc```. ```realloc``` is used to resize the previously allocated memory. 
 
 ## 2. Components
 - User Code
+    - This is where my code is used. 
     - The user gives the requirements to my code. 
     - My code gives back the pointer to the first memory code once its done. 
 - My code: 
@@ -21,8 +17,10 @@ I am building my own ```malloc```, ```free```, ```calloc``` and ```realloc```. `
     - Then, my code, will manage this page that it got from the OS. 
 
 ## 3. Data Flow
-   Step-by-step narrative of:
    - What happens when user calls malloc(100)?
+        - malloc is called in user code. The user code should call an API in my code. My code should check if I have enough memeory with me or should there be a nmap call to the OS requesting for more data. 
+        - The memory management needs to be done, if I have enough. I Could give it the data, if not, I have to get more from the OS. 
+        - So, once the memory allocation is done, ptr to the first memory block is returned. 
    - What happens when user calls free(ptr)?
    - What happens when the free list is empty?
 
