@@ -4,6 +4,7 @@
 int main() {
   hello();  
   int *ptr = malloc(10);
-  printf("%d", ptr);
-  printf("called malloc");
+  int *ptr2 = malloc(20);
+  printf("\n%d", ptr);
+  printf("\ncalled malloc");
 }
