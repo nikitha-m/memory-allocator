@@ -41,10 +41,5 @@ void* cus_malloc(int size) {
       }
     }
   }
-  entries[entry_count].ptr = mmap(NULL, size, PROT_READ|PROT_WRITE, MAP_ANONYMOUS|MAP_PRIVATE, -1, 0);
-  entries[entry_count].size = size;
-  entry_count = entry_count + 1; 
-  printf("\n%d", entry_count);
-
-  return entries[entry_count-1].ptr;
+  return mmap(NULL, size, PROT_READ|PROT_WRITE, MAP_ANONYMOUS|MAP_PRIVATE, -1, 0);
 }
